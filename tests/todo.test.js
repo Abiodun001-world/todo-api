@@ -1,5 +1,5 @@
 import request from "supertest";
-import app from "../index.js";
+import app from "../server.js";
 
 describe("Todo Endpoints", () => {
   it("should create a new todo item", async () => {

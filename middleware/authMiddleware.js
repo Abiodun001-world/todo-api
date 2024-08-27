@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import pool from "../utils/db.js";
+import pool from "../config/db.js";
 
 export const protect = async (req, res, next) => {
   let token;

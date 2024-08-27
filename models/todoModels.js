@@ -1,4 +1,4 @@
-import pool from "../utils/db.js";
+import pool from "../config/db.js";
 
 export const createTodo = async (todoData) => {
   const { title, description, userId } = todoData;

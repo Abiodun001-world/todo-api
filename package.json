@@ -2,11 +2,11 @@
   "name": "todo-api",
   "version": "1.0.0",
   "description": "A simple Todo API built with Node.js, Express, PostgreSQL, and ES6 modules. It includes authentication features like sign-up, sign-in, password reset, and more.",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "test": "jest",
-    "start": "nodemon"
+    "start": "nodemon server.js"
   },
   "jest": {
     "testEnvironment": "node"
