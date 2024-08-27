@@ -5,7 +5,7 @@ import { protect } from "../middleware/authMiddleware.js";
 const router = express.Router();
 
 // Create a new todo
-router.post("/todos", protect, async (req, res) => {
+router.post("/", protect, async (req, res) => {
   const { title, description } = req.body;
 
   try {
@@ -22,7 +22,7 @@ router.post("/todos", protect, async (req, res) => {
 });
 
 // Get all todos
-router.get("/todos", protect, async (req, res) => {
+router.get("/", protect, async (req, res) => {
   try {
     const todos = await pool.query("SELECT * FROM todos WHERE user_id = $1", [
       req.user,
@@ -35,7 +35,7 @@ router.get("/todos", protect, async (req, res) => {
 });
 
 // Get a single todo
-router.get("/todos/:id", protect, async (req, res) => {
+router.get("/:id", protect, async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -56,7 +56,7 @@ router.get("/todos/:id", protect, async (req, res) => {
 });
 
 // Update a todo
-router.put("/todos/:id", protect, async (req, res) => {
+router.put("/:id", protect, async (req, res) => {
   const { id } = req.params;
   const { title, description } = req.body;
 
@@ -78,7 +78,7 @@ router.put("/todos/:id", protect, async (req, res) => {
 });
 
 // Delete a todo
-router.delete("/todos/:id", protect, async (req, res) => {
+router.delete("/:id", protect, async (req, res) => {
   const { id } = req.params;
 
   try {
